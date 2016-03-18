@@ -20,12 +20,11 @@ NeoBundle 'itchyny/lightline.vim'
 "Unite.vim
 NeoBundle 'Shougo/unite.vim'
 "neomru
-NeoBundle 'shougo/neomaru.vim'
+NeoBundle 'shougo/neomru.vim'
 "vim-fugitive
 NeoBundle 'tpope/vim-fugitive'
 "color scheme
 NeoBundle 'tomasr/Molokai'
-
 
 
 call neobundle#end()
@@ -35,11 +34,14 @@ filetype plugin indent on
      
 " 未インストールのプラグインがある場合通知
 " 毎回聞かれると邪魔な場合はコメントアウト
-NeoBundleCheck
-      
+NeoBundleCheck    
 "-------------------------
 " End Neobundle Settings.
 "-------------------------
+
+"COLOR SCHEME
+colorscheme molokai
+let g:molokai_original = 1
 
 "COMMON SETTING
 set nocompatible	"compatibility with vi OFF
