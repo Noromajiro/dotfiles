@@ -1,3 +1,26 @@
+
+
+if has('vim_starting')
+    set runtimepath+=~/.vim/bundle/neobundle.vim
+    call neobundle#begin(expand('~/.vim/bundle/'))
+        NeoBundleFetch 'Shougo/neobundle.vim'
+        NeoBundle 'Shougo/vimproc'
+        NeoBundle 'VimClojure'
+        NeoBundle 'Shougo/vimshell'
+        NeoBundle 'Shougo/unite.vim'
+        NeoBundle 'Shougo/neocomplcache'
+        NeoBundle 'Shougo/neosnippet'
+        NeoBundle 'jpalardy/vim-slime'
+        NeoBundle 'scrooloose/syntastic'
+        NeoBundle 'scrooloose/nerdtree'
+        call neobundle#end()
+endif
+NeoBundleCheck
+
+filetype off
+filetype plugin indent on
+filetype indent on
+
 "COMMON SETTING
 set nocompatible	"compatibility with vi OFF
 "DISPLAY setting
@@ -35,6 +58,7 @@ set nobackup  		"ファイル保存時、バックアップファイルを作ら
 set noswapfile  	"ファイル編集中にスワップファイルを作らない
 "OS SETTING
 set mouse=a			"マウス入力を受け付ける
+set clipboard=unnamed,unnamedplus   "クリップボード
 "COMMAND LINNE SETTING
 set wildmenu 						"Tabキーによるファイル名補完を有効
 set wildmode=list:longest,full		"Tabキーによるファイル名補完の挙動設定
