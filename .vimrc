@@ -1,25 +1,45 @@
+"---------------------------
+" Start Neobundle Settings.
+"---------------------------
+" bundleで管理するディレクトリを指定
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" neobundle自体をneobundleで管理
+NeoBundleFetch 'Shougo/neobundle.vim'
+  
+" ここから追加プラグイン
+"NerdTree
+NeoBundle 'scrooloose/nerdtree'
+"autoclose
+NeoBundle 'Townk/vim-autoclose'
+"lightline
+NeoBundle 'itchyny/lightline.vim'
+"Unite.vim
+NeoBundle 'Shougo/unite.vim'
+"neomru
+NeoBundle 'shougo/neomaru.vim'
+"vim-fugitive
+NeoBundle 'tpope/vim-fugitive'
+"color scheme
+NeoBundle 'tomasr/Molokai'
 
 
-if has('vim_starting')
-    set runtimepath+=~/.vim/bundle/neobundle.vim
-    call neobundle#begin(expand('~/.vim/bundle/'))
-        NeoBundleFetch 'Shougo/neobundle.vim'
-        NeoBundle 'Shougo/vimproc'
-        NeoBundle 'VimClojure'
-        NeoBundle 'Shougo/vimshell'
-        NeoBundle 'Shougo/unite.vim'
-        NeoBundle 'Shougo/neocomplcache'
-        NeoBundle 'Shougo/neosnippet'
-        NeoBundle 'jpalardy/vim-slime'
-        NeoBundle 'scrooloose/syntastic'
-        NeoBundle 'scrooloose/nerdtree'
-        call neobundle#end()
-endif
-NeoBundleCheck
 
-filetype off
+call neobundle#end()
+   
+" Required:
 filetype plugin indent on
-filetype indent on
+     
+" 未インストールのプラグインがある場合通知
+" 毎回聞かれると邪魔な場合はコメントアウト
+NeoBundleCheck
+      
+"-------------------------
+" End Neobundle Settings.
+"-------------------------
 
 "COMMON SETTING
 set nocompatible	"compatibility with vi OFF
@@ -62,4 +82,3 @@ set clipboard=unnamed,unnamedplus   "クリップボード
 "COMMAND LINNE SETTING
 set wildmenu 						"Tabキーによるファイル名補完を有効
 set wildmode=list:longest,full		"Tabキーによるファイル名補完の挙動設定
-
